@@ -139,7 +139,7 @@ def image_augmentation(scan_image, mask_image, augment_only_images=True):
     return scan, mask
 
 
-def display_test(dataset, samples: int = 5, start: int = 120):
+def display_test(dataset, samples: int = 5):
     plt.figure(figsize=(9, 9))
     images = []
     for scan, mask in dataset.take(samples):
@@ -156,9 +156,11 @@ def display_test(dataset, samples: int = 5, start: int = 120):
 # Sample Dataset from Generator
 # args = [set_start, set_end, structures, base_raw, mni152, structures_cortex, resize, resize_shape, augment, augment_only_images]
 # ds = tf.data.Dataset.from_generator(load_whole_brain_seg_data,
-#                                     args=[4, 5, False, True, True, False, True, [0, 256, 256], True, True],
+#                                     args=[0, 5, True, False, True, False, True, [0, 256, 256], True, True],
 #                                     output_signature=(
 #                                         tf.TensorSpec(shape=(256, 256, 1), dtype=tf.float32),
 #                                         tf.TensorSpec(shape=(256, 256, 1), dtype=tf.float32)))
 # ds = ds.batch(16)
 # display_test(ds)
+
+# Structures, structures_cortex(false) = Highest 59 labels (Common 57-58)
