@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="brainseg",
-    version="0.0.1",
+    version="0.0.5",
     author="Alan Lee",
     author_email="alleetw101@gmail.com",
-    description="A nifti processing tool",
+    description="A brain segmentation tool",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/alleetw101/brainseg",
@@ -18,7 +18,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-       'Tensorflow>=2.0'
+        'Tensorflow>=2.0',
+        'Pillow>=8.0',
+        'niftiprocessing'
     ],
     entry_points={
         'console_scripts': ['brainseg=brainseg:main'],
