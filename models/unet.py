@@ -32,9 +32,11 @@ def bottom_block(inputs, filters, size):
     x = layers.Conv2D(filters, size, padding='same')(inputs)
     x = layers.BatchNormalization()(x)
     x = layers.ReLU()(x)
+    x = layers.Dropout()(x)
     x = layers.Conv2D(filters, size, padding='same')(x)
     x = layers.BatchNormalization()(x)
     x = layers.ReLU()(x)
+    x = layers.Dropout()(x)
 
     return x
 
@@ -59,8 +61,3 @@ def unet_model(input_shape):
     out_model = tf.keras.Model(inputs, output, name='Unet')
 
     return out_model
-
-
-model = unet_model((192, 256, 1))
-
-model.summary()
