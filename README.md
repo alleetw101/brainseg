@@ -6,6 +6,8 @@ A brain segmentation tool using machine learning
 
 Under development
 
+[Colab](https://colab.research.google.com/drive/1cTKJ7WxrV41UKfQ2oieYbxdz3m_Lvga2?usp=sharing)
+
 This software has NOT been approved for medical analysis/diagnosis. Please use other
 approved software for medical use.
 
